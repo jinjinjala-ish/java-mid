@@ -12,17 +12,22 @@ public class LocalOuterV3 {
             int value = 0;
 
             @Override
-            public void print() {
+            public Printer print() {
                 System.out.println("value = " + value);
 
                 //인스턴스는 지역 변수보다 더 오래 살아남음
                 System.out.println("localVar = " + localVar);
                 System.out.println("paramVar = " + paramVar);
                 System.out.println("outInstanceVar = " + outInstanceVar);
+                return null;
             }
         }
 
         Printer printer = new LocalPrinter();
+        //만약 localVar의 값을 변경한다면?
+        //localVar = 10;
+        //paramVar = 10;
+
         //localPrinter.print(); print()를 여기서 실행하지 않고, Printer 인스턴스만 반환한다.
         return printer;
     }
